@@ -1,0 +1,50 @@
+
+body{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    text-align: center;
+   
+}
+.artist-window{    
+    display: inline-block;   
+    margin: 15px;
+   
+}
+#all{
+     
+    margin-top: 75px;
+    position: relative;
+    max-width: max-content;    
+}
+#card{       
+   
+    padding-bottom: 100px;
+    padding-top: 50px;
+    background-color: azure;  
+    text-align: center;
+    margin: 100px auto;
+    border-radius: 20px;   
+}  
+span, p{
+    font-weight: bold;
+}
+
+table{
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+    color: azure;
+}
+img{
+    border-radius: 50%;
+}
+.artist-window :hover{
+    color: yellow;
+    
+}
+.error p {
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+}

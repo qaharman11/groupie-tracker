@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Latest compiled and minified CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Latest compiled JavaScript -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
+    <link rel="stylesheet" href="/public/static/css/style.css">
+    <title>{{ .Name }}</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="http://localhost:8080/">Home</a>
+        </li>
+       
+      </ul>
+    </div>
+  </nav>
+<div class="container" id="card">
+    <div class="imgBox">
+      <img src="{{.Image}}" alt="alternatetext">
+    </div>
+     <br>
+  
+   <p>{{ .Name }}</p>  
+ 
+  
+    <span>Group members:</span>
+    {{ range .Members}}
+    <li>
+        {{ . }}
+        <br>
+    </li>
+    {{ end }}   
+  
+  <br><br>
+
+<span>First Album release: </span>{{ .FirstAlbum }}  <br>
+<span>Creation Date:      </span>{{  .CreationDate }} <br>
+<span>Locations:</span>
+
+<br>
+      <div class="dates">
+        <table>        
+          <tr>
+              <th>City</th>       
+              <th>Date</th>
+          </tr>
+          <tr>
+              {{ range $city, $dates := .DatesLocations}}
+              <td>{{ $city }}</td>
+              
+              <td>
+                <div class="text text-wrap">
+                  {{ range $dates }}
+
+                {{ . }};
+                  
+                  {{end}}
+                </div>
+              </td>
+             
+            
+             
+          </tr>
+          {{ end }}
+        </table>
+      </div>     
+</div>
+</body>
+</html>
